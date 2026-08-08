@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum Shift | Learn JS &amp; CSS Through Play</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quantum Shift is a neon‑themed quiz game that helps you learn JavaScript and CSS basics.">
+    <!-- Tailwind CSS CDN for modern utility classes -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- jQuery UI theme -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <!-- Project CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+<header class="site-header border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-500 animate-pulse shadow-lg shadow-cyan-500/40"></div>
+            <a href="index.html" class="text-xl font-semibold tracking-wide text-cyan-300 hover:text-cyan-200 transition-colors">
+                Quantum Shift
+            </a>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul class="flex gap-2 text-sm">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="game.html" class="nav-link">Play Game</a></li>
+                <li><a href="lessons.html" class="nav-link">Lessons</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="flex-1">
+    <!-- Hero section -->
+    <section aria-labelledby="hero-heading" class="py-10">
+        <div class="container mx-auto px-4 grid gap-8 md:grid-cols-2 items-center">
+            <div class="space-y-4">
+                <p class="text-xs uppercase tracking-[0.2em] text-cyan-400">Interactive learning</p>
+                <h1 id="hero-heading" class="text-3xl md:text-4xl font-semibold">
+                    Shift your skills into <span class="text-cyan-400">Quantum</span> mode.
+                </h1>
+                <p class="text-sm text-slate-300 max-w-xl">
+                    Quantum Shift is a small, focused web game that quizzes you on beginner JavaScript
+                    and CSS concepts. Answer questions, watch the neon progress bar fill up, and hear
+                    satisfying sound effects when you get questions right.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="game.html" class="btn btn-primary">
+                        Start Quantum Shift
+                    </a>
+                    <a href="lessons.html" class="btn btn-ghost">
+                        Review quick lessons
+                    </a>
+                </div>
+                <div class="flex gap-4 text-xs text-slate-400 pt-3">
+                    <div class="flex items-center gap-1">
+                        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Beginner‑friendly</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+                        <span>Keyboard accessible</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- “Graphics” card: pseudo‑sci‑fi dashboard -->
+            <div class="relative">
+                <div class="hero-panel relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-4 shadow-2xl">
+                    <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl"></div>
+                    <div class="flex items-center justify-between text-xs text-slate-400 mb-4">
+                        <span>Quantum Console</span>
+                        <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[0.65rem]">LIVE</span>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <p class="mb-1 text-slate-300">Skill charge</p>
+                            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-emerald-400 progress-bar"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-[0.65rem]">
+                            <div class="stat-pill">
+                                <p class="text-slate-400">JavaScript</p>
+                                <p class="text-cyan-300 font-semibold">Level 1</p>
+                            </div>
+                            <div class="stat-pill">
+                                <p class="text-slate-400">CSS</p>
+                                <p class="text-fuchsia-300 font-semibold">Level 1</p>
+                            </div>
+                            <div class="stat-pill">
+                                <p class="text-slate-400">Streak</p>
+                                <p class="text-emerald-300 font-semibold">0</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-[0.7rem] text-slate-400">
+                            Tip: open the browser dev tools while you play and inspect how Quantum Shift is built.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ using jQuery UI accordion -->
+    <section class="py-8 border-t border-slate-800 bg-slate-950/60" aria-label="Frequently asked questions">
+        <div class="container mx-auto px-4">
+            <h2 class="text-lg font-semibold mb-4">Quick FAQ</h2>
+            <div id="faq-accordion">
+                <h3>Who is Quantum Shift for?</h3>
+                <div>
+                    <p>
+                        Quantum Shift is for students who are just getting used to JavaScript and CSS.
+                        It also works as a quick review tool before quizzes and exams.
+                    </p>
+                </div>
+                <h3>What tech does this project use?</h3>
+                <div>
+                    <p>
+                        The project uses HTML5, CSS3, Tailwind utility classes, JavaScript, jQuery, jQuery UI,
+                        and AJAX with JSON data. All custom CSS and JavaScript live in separate files.
+                    </p>
+                </div>
+                <h3>Can I run this inside Eclipse?</h3>
+                <div>
+                    <p>
+                        Yes. You can import the project as a Dynamic Web Project, place files under WebContent,
+                        and run it on a local server. All paths are relative.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun fact tooltip section (uses jQuery UI tooltip + custom plugin) -->
+    <section class="py-8" aria-labelledby="funfact-heading">
+        <div class="container mx-auto px-4 funfacts-section">
+            <h2 id="funfact-heading" class="text-lg font-semibold mb-2">Hover for a Quantum Fun Fact</h2>
+            <p class="text-sm text-slate-300">
+                Hover over the highlighted phrases to see a random fun fact powered by
+                jQuery UI tooltips and a small JSON data file:
+                <span class="funfact-trigger text-cyan-300 underline decoration-dotted cursor-help" data-key="js">
+                    JavaScript engine
+                </span>
+                and
+                <span class="funfact-trigger text-fuchsia-300 underline decoration-dotted cursor-help" data-key="css">
+                    CSS cascade
+                </span>.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer border-t border-slate-800 bg-slate-950">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row gap-2 items-start md:items-center justify-between text-xs text-slate-400">
+        <p>&copy; <span id="year"></span> Quantum Shift. Built as a student project.</p>
+        <p><a href="about.html" class="underline decoration-dotted hover:text-slate-200">Accessibility &amp; contact</a></p>
+    </div>
+</footer>
+
+<!-- JS includes -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/funfacts.js"></script>
+</body>
+</html>

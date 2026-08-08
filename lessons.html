@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum Shift | Lessons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quick lesson notes that match the Quantum Shift quiz topics.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+<header class="site-header border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-500 animate-pulse shadow-lg shadow-cyan-500/40"></div>
+            <a href="index.html" class="text-xl font-semibold tracking-wide text-cyan-300 hover:text-cyan-200 transition-colors">
+                Quantum Shift
+            </a>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul class="flex gap-2 text-sm">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="game.html" class="nav-link">Play Game</a></li>
+                <li><a href="lessons.html" class="nav-link active">Lessons</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="flex-1">
+    <section aria-labelledby="lesson-heading" class="py-8">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="mb-4">
+                <p class="text-xs uppercase tracking-[0.25em] text-cyan-400 mb-1">Review</p>
+                <h1 id="lesson-heading" class="text-2xl md:text-3xl font-semibold">Lesson Notes</h1>
+                <p class="text-sm text-slate-300 max-w-2xl">
+                    These short notes match the topics that appear in the Quantum Shift quiz. Skim them before
+                    you play, or use them as a quick study sheet.
+                </p>
+            </div>
+
+            <!-- jQuery UI tabs -->
+            <div id="lesson-tabs" class="lesson-tabs">
+                <ul>
+                    <li><a href="#tabs-js">JavaScript Basics</a></li>
+                    <li><a href="#tabs-css">CSS Basics</a></li>
+                    <li><a href="#tabs-dom">DOM &amp; Events</a></li>
+                </ul>
+                <div id="tabs-js">
+                    <h2 class="text-lg font-semibold mb-2">JavaScript Basics</h2>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li><code>let</code> and <code>const</code> declare variables.</li>
+                        <li>Use <code>===</code> for strict comparisons (type + value).</li>
+                        <li>Functions group reusable logic: <code>function greet(name) { ... }</code></li>
+                        <li><code>console.log()</code> is your best friend while debugging.</li>
+                    </ul>
+                </div>
+                <div id="tabs-css">
+                    <h2 class="text-lg font-semibold mb-2">CSS Basics</h2>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li>Selectors target elements: <code>.class</code>, <code>#id</code>, <code>header</code>, etc.</li>
+                        <li><code>margin</code> controls space outside; <code>padding</code> controls space inside.</li>
+                        <li>Flexbox (<code>display: flex;</code>) is great for alignment and layout.</li>
+                        <li>Use a small, consistent set of colors and spacing values for cleaner design.</li>
+                    </ul>
+                </div>
+                <div id="tabs-dom">
+                    <h2 class="text-lg font-semibold mb-2">DOM &amp; Events</h2>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li>The DOM is the in-memory representation of your HTML.</li>
+                        <li>Use <code>document.querySelector()</code> or jQuery's <code>$(...)</code> to find elements.</li>
+                        <li>Events (click, keydown, input) let you react to user actions.</li>
+                        <li>Always keep your JS in external files for separation of concerns.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AJAX tips -->
+    <section class="py-8 border-t border-slate-800 bg-slate-950/60" aria-labelledby="tips-heading">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 id="tips-heading" class="text-lg font-semibold mb-2">Extra Tips (Loaded with AJAX)</h2>
+            <p class="text-sm text-slate-300 mb-3">
+                Click the button to load a handful of additional tips from a local JSON file using jQuery's
+                <code>getJSON()</code> function.
+            </p>
+            <button type="button" id="loadTipsBtn" class="btn">
+                Load Tips
+            </button>
+            <ul id="tipsList" class="tips-list mt-3 text-sm space-y-1 list-disc list-inside"></ul>
+            <p id="tipsStatus" class="sr-only" aria-live="polite"></p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer border-t border-slate-800 bg-slate-950">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row gap-2 items-start md:items-center justify-between text-xs text-slate-400">
+        <p>&copy; <span id="year"></span> Quantum Shift. Built as a student project.</p>
+        <p><a href="about.html" class="underline decoration-dotted hover:text-slate-200">Accessibility &amp; contact</a></p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/lessons.js"></script>
+</body>
+</html>

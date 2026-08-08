@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum Shift | About &amp; Accessibility</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About the Quantum Shift project and basic accessibility information.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+<header class="site-header border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-500 animate-pulse shadow-lg shadow-cyan-500/40"></div>
+            <a href="index.html" class="text-xl font-semibold tracking-wide text-cyan-300 hover:text-cyan-200 transition-colors">
+                Quantum Shift
+            </a>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul class="flex gap-2 text-sm">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="game.html" class="nav-link">Play Game</a></li>
+                <li><a href="lessons.html" class="nav-link">Lessons</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="flex-1">
+    <section aria-labelledby="about-heading" class="py-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h1 id="about-heading" class="text-2xl md:text-3xl font-semibold mb-3">About Quantum Shift</h1>
+            <p class="text-sm text-slate-300 mb-3">
+                Quantum Shift is a small educational web app built to demonstrate:
+            </p>
+            <ul class="list-disc list-inside text-sm text-slate-300 space-y-1 mb-4">
+                <li>Valid HTML5 with semantic structure</li>
+                <li>External CSS and JavaScript (no embedded code)</li>
+                <li>jQuery UI widgets and simple custom plugins</li>
+                <li>AJAX requests for JSON-formatted data</li>
+                <li>Basic accessibility and keyboard navigation</li>
+            </ul>
+            <p class="text-sm text-slate-300">
+                The goal is not to be a huge production game, but to be clear, readable, and easy to maintain.
+                Another student should be able to open this project in an editor and understand what is going on.
+            </p>
+        </div>
+    </section>
+
+    <section aria-labelledby="access-heading" class="py-6 border-t border-slate-800 bg-slate-950/60">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 id="access-heading" class="text-lg font-semibold mb-2">Accessibility Notes</h2>
+            <ul class="list-disc list-inside text-sm text-slate-300 space-y-1 mb-3">
+                <li>Headings follow a logical order.</li>
+                <li>Interactive controls are keyboard accessible.</li>
+                <li>Important updates (score, tips) are announced via ARIA live regions.</li>
+                <li>Color is not the only way information is communicated.</li>
+            </ul>
+            <p class="text-sm text-slate-300">
+                If this was a real production project, we would also add focus outlines for custom elements,
+                perform screen reader testing, and run automated accessibility checks.
+            </p>
+        </div>
+    </section>
+
+    <section aria-labelledby="contact-heading" class="py-8">
+        <div class="container mx-auto px-4 max-w-md">
+            <h2 id="contact-heading" class="text-lg font-semibold mb-2">Contact (Demo)</h2>
+            <p class="text-sm text-slate-300 mb-3">
+                For a class assignment, you can list your school email here. The form below is a non-functional
+                mockup to show basic form structure and labels.
+            </p>
+
+            <form class="contact-form space-y-3" aria-label="Feedback form">
+                <div class="form-field">
+                    <label for="nameInput">Name</label>
+                    <input id="nameInput" name="name" type="text" autocomplete="name" class="field-input">
+                </div>
+
+                <div class="form-field">
+                    <label for="emailInput">Email</label>
+                    <input id="emailInput" name="email" type="email" autocomplete="email" class="field-input">
+                </div>
+
+                <div class="form-field">
+                    <label for="messageInput">Message</label>
+                    <textarea id="messageInput" name="message" rows="4" class="field-input"></textarea>
+                </div>
+
+                <button type="submit" class="btn">
+                    Send (demo only)
+                </button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer border-t border-slate-800 bg-slate-950">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row gap-2 items-start md:items-center justify-between text-xs text-slate-400">
+        <p>&copy; <span id="year"></span> Quantum Shift. Built as a student project.</p>
+        <p><a href="about.html" class="underline decoration-dotted hover:text-slate-200">Accessibility &amp; contact</a></p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

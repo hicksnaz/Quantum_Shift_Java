@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum Shift | Play the Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Play Quantum Shift and test your basic JavaScript and CSS knowledge.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+<header class="site-header border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-500 animate-pulse shadow-lg shadow-cyan-500/40"></div>
+            <a href="index.html" class="text-xl font-semibold tracking-wide text-cyan-300 hover:text-cyan-200 transition-colors">
+                Quantum Shift
+            </a>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul class="flex gap-2 text-sm">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="game.html" class="nav-link active">Play Game</a></li>
+                <li><a href="lessons.html" class="nav-link">Lessons</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="flex-1">
+    <section aria-labelledby="game-heading" class="py-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="mb-4">
+                <p class="text-xs uppercase tracking-[0.25em] text-cyan-400 mb-1">Game mode</p>
+                <h1 id="game-heading" class="text-2xl md:text-3xl font-semibold">Quantum Shift Quiz</h1>
+                <p class="text-sm text-slate-300 max-w-xl">
+                    Answer the questions below. Each correct answer charges your Quantum Bar and plays
+                    a small sound effect. Try to reach a full bar with a streak of correct answers.
+                </p>
+            </div>
+
+            <!-- Live status for screen readers -->
+            <p id="sr-status" class="sr-only" aria-live="polite"></p>
+
+            <!-- Score + progress -->
+            <div class="flex flex-wrap gap-4 items-center mb-4 text-xs">
+                <div class="px-3 py-2 rounded-xl bg-slate-900/70 border border-slate-800">
+                    <p class="text-slate-400">Question</p>
+                    <p><span id="questionNumber">1</span> / <span id="totalQuestions">0</span></p>
+                </div>
+                <div class="px-3 py-2 rounded-xl bg-slate-900/70 border border-slate-800">
+                    <p class="text-slate-400">Score</p>
+                    <p><span id="score">0</span></p>
+                </div>
+                <div class="px-3 py-2 rounded-xl bg-slate-900/70 border border-slate-800">
+                    <p class="text-slate-400">Streak</p>
+                    <p><span id="streak">0</span></p>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                    <p class="text-slate-400 mb-1 text-[0.7rem]">Quantum Bar</p>
+                    <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                        <div id="progressFill" class="h-full bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-emerald-400 transition-all duration-300"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question card -->
+            <div id="questionCard" class="question-card" aria-live="polite">
+                <p class="text-xs text-cyan-300 mb-1" id="questionTopic">Topic: –</p>
+                <h2 id="questionText" class="text-lg font-semibold mb-3">Loading question...</h2>
+                <ul id="answerList" class="answer-list">
+                    <!-- Answer buttons inserted by game.js -->
+                </ul>
+            </div>
+
+            <!-- Controls -->
+            <div class="game-controls mt-4">
+                <button type="button" id="nextQuestionBtn" class="btn btn-ghost" disabled>
+                    Next Question
+                </button>
+                <button type="button" id="restartGameBtn" class="btn">
+                    Restart Quantum Shift
+                </button>
+            </div>
+
+            <!-- jQuery UI dialog for final score -->
+            <div id="finalScoreDialog" title="Quantum Shift complete" class="dialog-hidden">
+                <p id="finalScoreText">Nice work! You finished the quiz.</p>
+                <p class="text-xs text-slate-500 mt-2">
+                    Tip: You can tweak <code>questions</code> in <strong>game.js</strong> to add your own questions.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer border-t border-slate-800 bg-slate-950">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row gap-2 items-start md:items-center justify-between text-xs text-slate-400">
+        <p>&copy; <span id="year"></span> Quantum Shift. Built as a student project.</p>
+        <p><a href="about.html" class="underline decoration-dotted hover:text-slate-200">Accessibility &amp; contact</a></p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
