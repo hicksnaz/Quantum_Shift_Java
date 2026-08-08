@@ -1,8 +1,0 @@
-{
-  "hints": [
-    "In modern JavaScript, 'let' and 'const' are usually preferred over 'var'.",
-    "The typeof operator returns a string that tells you the type of a value.",
-    "Remember that // is for single-line comments, and /* */ is for multi-line comments.",
-    "A for loop is often used when you know how many times you want to repeat something."
-  ]
-}
