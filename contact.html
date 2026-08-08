@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Quest - Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- This script file handles simple form checks and pop-up messages -->
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+<header>
+    <!-- Reused header and navigation bar -->
+    <h1>JS Quest</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="game.html">Game</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <!-- General contact form for questions or feedback -->
+    <section class="section">
+        <h2>Contact Us</h2>
+        <p>
+            If you have feedback about the quiz, ideas for new questions, or just want to say
+            something about the site, you can use the form below.
+        </p>
+        <form id="contact-form">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email">
+
+            <label for="message">Message *</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Simple high score form (demo only, not saved on a real server) -->
+    <section class="section">
+        <h2>Submit Your High Score</h2>
+        <p>
+            Finished the quiz with a score you’re proud of? You can enter it here.
+            In this version, the data isn’t stored anywhere; it just shows a message.
+        </p>
+        <form id="score-form">
+            <label for="playerName">Name *</label>
+            <input type="text" id="playerName" name="playerName">
+
+            <label for="score">Score *</label>
+            <input type="number" id="score" name="score" min="0">
+
+            <label for="comments">Comments (optional)</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <button type="submit">Submit Score</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    © 2025 JS Quest · Contact & High Scores
+</footer>
+</body>
+</html>

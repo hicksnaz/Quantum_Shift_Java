@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Quest - Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Shared script (mainly for forms, but safe to reuse here) -->
+    <script src="js/script.js" defer></script>
+
+    <!-- Small script just for changing the text when a concept is clicked -->
+    <script>
+        // When the page finishes loading, connect the gallery items to the description box.
+        document.addEventListener("DOMContentLoaded", () => {
+            const description = document.getElementById("concept-description");
+
+            // Short explanations for each concept
+            const concepts = {
+                "variables": "Variables work like labeled boxes where you store information.",
+                "functions": "Functions are blocks of code you can reuse by calling their name.",
+                "conditionals": "Conditionals let your code make choices (if this is true, do that).",
+                "loops": "Loops repeat a piece of code until a certain condition is met."
+            };
+
+            // When a user clicks a gallery item, update the text
+            document.querySelectorAll(".gallery-item").forEach(item => {
+                item.addEventListener("click", () => {
+                    const key = item.getAttribute("data-concept");
+                    description.textContent = concepts[key] || "Select a concept to see a short explanation.";
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<header>
+    <!-- Same header and navigation as the other pages -->
+    <h1>JS Quest</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="game.html">Game</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <!-- Gallery that shows concepts in a visual way -->
+    <section class="section">
+        <h2>JavaScript Concept Gallery</h2>
+        <p>
+            Each card below represents one basic JavaScript idea. Click a card to see a short
+            description of what it means.
+        </p>
+
+        <div class="gallery-grid">
+            <!-- Each of these items points to a concept in the script above -->
+            <div class="gallery-item" data-concept="variables">
+                <img src="images/variables.png" alt="Variables illustration">
+                <p>Variables</p>
+            </div>
+
+            <div class="gallery-item" data-concept="functions">
+                <img src="images/functions.png" alt="Functions illustration">
+                <p>Functions</p>
+            </div>
+
+            <div class="gallery-item" data-concept="conditionals">
+                <img src="images/conditionals.png" alt="Conditionals illustration">
+                <p>Conditionals</p>
+            </div>
+
+            <div class="gallery-item" data-concept="loops">
+                <img src="images/loops.png" alt="Loops illustration">
+                <p>Loops</p>
+            </div>
+        </div>
+
+        <!-- This text changes depending on which concept card is clicked -->
+        <div id="concept-description" style="margin-top: 20px;">
+            Click one of the concepts above to read a short description.
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2025 JS Quest · Concept Gallery
+</footer>
+</body>
+</html>
