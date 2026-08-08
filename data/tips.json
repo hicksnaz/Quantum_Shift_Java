@@ -1,0 +1,11 @@
+{
+  "tips": [
+    "Use console.log() to understand what your code is doing at each step.",
+    "Keep your CSS small and organized. Group related styles together.",
+    "Name variables based on their purpose, not just x or data.",
+    "Break large functions into smaller helpers that do one thing well.",
+    "Use the browser dev tools to inspect HTML, CSS, and network requests.",
+    "Commit small changes often so you can undo if something breaks.",
+    "Comment your code, but focus on explaining why, not what."
+  ]
+}
