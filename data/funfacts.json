@@ -1,0 +1,14 @@
+{
+  "js": [
+    "JavaScript was originally created in just 10 days.",
+    "Despite the name, JavaScript is not related to Java.",
+    "NaN is a special numeric value in JavaScript that literally means Not-a-Number.",
+    "The first word many JavaScript developers learn is console.log."
+  ],
+  "css": [
+    "CSS stands for Cascading Style Sheets.",
+    "The cascade part of CSS decides which rule wins when multiple rules target the same element.",
+    "You can animate many CSS properties using the transition property.",
+    "The CSS box model is the foundation of how elements are sized and spaced."
+  ]
+}
